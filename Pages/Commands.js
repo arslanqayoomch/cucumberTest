@@ -62,8 +62,10 @@ class Commands {
      */
     async isWebElementDisplayed(locator) {
         const element = await $(locator);
-        return await element.isDisplayed();
+        return await
+     element.isDisplayed();
     }
+
     async isWebElementDisplayedWithWait(locator) {
         await $(locator).waitForDisplayed();
         return await $(locator).isDisplayed();
@@ -76,6 +78,7 @@ class Commands {
         const dropdownElement = await this.findWebElement(locator);
         await dropdownElement.selectByVisibleText(selectThis);
     }
+    
     async getTextFromWebElement(locator) {
         const element = await this.findWebElement(locator);
         return await element.getText();
